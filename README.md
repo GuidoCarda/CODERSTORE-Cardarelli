@@ -6,4 +6,4 @@ En este proyecto estare creando una ecommerce para la venta de insumos informati
 
 ### Librerias del proyecto
 
-[React Icons](https://www.example.com)
+[React Icons](https://react-icons.github.io/react-icons)
