@@ -1,0 +1,131 @@
+
+html{
+  color:rgb(36, 39, 53);
+}
+
+nav{
+  height: 4rem;
+  width: 100%;
+  position: relative;
+}
+
+.nav-container{
+  width: min(1200px, 90vw);
+  margin-inline: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo{
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li > a {
+  display: block;
+  height: 2rem;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  font-size: 1rem;
+  line-height: 1rem; 
+  background: rgb(234, 235, 238);
+}
+
+.nav-links li > a:hover {
+  background: rgb(220, 222, 231);
+}
+
+.nav-links li > a:active {
+  background: rgb(64, 86, 161);
+  color: white;
+}
+
+
+.nav-buttons{
+  display: flex;
+  gap: .5rem;
+}
+
+.nav-buttons > button{
+  height: 2rem;
+  width: 2rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.25rem;
+  border-radius: .3rem;
+  border: none;
+  background: rgb(234, 235, 238);
+  user-select: none;
+}
+
+.nav-buttons .cart-btn{
+  position: relative;
+}
+
+.nav-buttons .cart-btn:active{
+  transform: translateY(3px);
+}
+
+.nav-buttons .cart-btn:before{
+  position: absolute;
+  content: '1';
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: rgb(218, 90, 90);
+  top: -10px;
+  right: -10px;
+  font-size: .8rem;
+  display: grid;
+  place-content: center;
+}
+
+.nav-buttons .toggle-btn{
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .nav-links{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 99%;
+    flex-direction: column;
+    padding: 1rem;
+    background: white;
+    width: 90vw;
+    margin-inline: auto;
+    margin-top: 1rem;
+    border-radius: .3rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease-in;
+  }
+
+  .nav-links li > a{
+    height: 3.5rem;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.12rem;
+  }
+
+  .nav-buttons .toggle-btn{
+    display: grid;
+  }
+}
+
+
+.nav-links.active{
+  opacity: 1;
+  visibility: visible;
+}
