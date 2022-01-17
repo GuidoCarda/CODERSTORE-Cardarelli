@@ -12,7 +12,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   
   return (
     <div className="itemcount-container">
-      <h3>Nombre de producto</h3>
       <div className="count-container">
         <button className='control-btn' onClick={removeItem} disabled={count === 0}><FaMinus/></button>
         <span>{count}</span>

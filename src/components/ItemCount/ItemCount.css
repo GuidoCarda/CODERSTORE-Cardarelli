@@ -1,25 +1,16 @@
 
-
 .itemcount-container{
-  width: min(20rem, 90vw);
   background: white;
-  border: 1px solid #e4e4e4;
   border-radius: .3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding: 2rem;
-}
-
-.itemcount-container h3{
-font-size: 1.25rem;
-  color:  rgb(28, 39, 61);
-  align-self: flex-start;
+ padding: 0 1rem 1rem 1rem;
 }
 
 .count-container{
+  margin-top: auto;
   width: 100%;
   display: grid;
   grid-template-columns: 2rem auto 2rem;

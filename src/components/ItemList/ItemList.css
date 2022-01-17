@@ -1,0 +1,11 @@
+.item-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+}
+
+.item-list-title{
+  font-size: 2rem;
+  text-align: center;
+  padding-block: 1rem 4rem;
+}

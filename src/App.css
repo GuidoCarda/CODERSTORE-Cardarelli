@@ -25,6 +25,11 @@ button{
   cursor: pointer;
 }
 
+img{
+  max-width: 100%;
+  display: block;
+}
+
 .section{
   background: rgb(237, 239, 241);
 }
@@ -33,5 +38,4 @@ button{
   width: min(1200px, 90vw);
   margin-inline: auto;
   padding-block: 2rem;
-  min-height: calc(100vh - 4rem);
 }
