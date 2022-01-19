@@ -1,14 +1,20 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
+
+  const addItem = ( count ) => {
+    alert(`Added ${count} ${count > 1 ? 'items' : 'item'} to the cart`)
+  }
+  
   return (
-    <div className="App">
+    <>
       <NavBar/>
-      <ItemListContainer/>
-    </div>
+      <ItemListContainer onAdd={addItem}/>
+      <ItemDetailContainer onAdd={addItem}/>
+    </>
   );
 }
 
