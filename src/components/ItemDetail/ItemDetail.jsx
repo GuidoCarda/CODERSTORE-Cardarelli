@@ -20,7 +20,7 @@ const ItemDetail = ({item, onAdd}) => {
           <span  className='item-detail-stock'>Stock disponible: {item.stock}</span>
           <span className='item-detail-price'>${item.price}</span>
         </div>
-          <ItemCount stock={item.stock} initial={0} onAdd={onAdd}/> 
+          <ItemCount stock={item.stock} initial={ item.stock ? 1 : 0} onAdd={onAdd}/> 
       </div>
     </>
   )

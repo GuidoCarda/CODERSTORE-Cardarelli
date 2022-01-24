@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <Routes>
-        <Route path='/' element={ <ItemListContainer onAdd={addItem}/>}/>
+        <Route exact path='/' element={ <ItemListContainer onAdd={addItem}/>}/>
         <Route path='/category/:id' element={ <ItemListContainer onAdd={addItem}/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer onAdd={addItem}/>} />
         <Route path="*" element={<NotFound/>} />
