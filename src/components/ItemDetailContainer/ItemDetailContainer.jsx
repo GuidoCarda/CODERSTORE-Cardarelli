@@ -3,27 +3,29 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import products from '../ItemListContainer/products'
 import Loading from '../Loading/Loading'
 import './ItemDetailContainer.css'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = ({onAdd}) => {
   
-  const getItem = () => {
+  const getItem = (id) => {
     return new Promise( (resolve,reject) => {
       setTimeout(() => {
-        resolve(products[3]) /* Selecciono un producto de mi array de products */
+        resolve(products.find( item => item.id === id ))
       }, 2000); 
     })
   }
+
+  const { id } = useParams();
   
- 
   const [item,setItem] = useState({})
   const [loading,setLoading] = useState(true)
  
   useEffect(() => {
-    getItem().then( response => {
+    getItem(id).then( response => {
       setItem(response)
       setLoading(false)
     })
-  }, [])
+  }, [id])
 
   return (
     <div className="container item-detail">    

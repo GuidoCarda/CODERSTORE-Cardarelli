@@ -3,16 +3,17 @@ import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = ({item, onAdd}) => {
-  console.log(item)
   return (
     <>
-      <img className='item-detail-img'
-      src={item.pictureURL}
-      alt=""
-      />
+      <div className="item-detail-img">
+        <img
+        src={item.pictureURL}
+        alt=""
+        />
+      </div>
 
       <div className="item-detail-info">
-        <span className='item-detail-category'>{item.category}</span>
+        <span className={`item-detail-category ${item.category}`}>{item.category}</span>
         <h2>{item.title}</h2>
         <p>{item.description}</p>
         <div>

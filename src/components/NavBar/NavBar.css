@@ -5,9 +5,10 @@ html{
 
 nav{
   height: 4rem;
-  width: 100%;
   position: relative;
-  border: 1px solid rgb(236, 236, 236);
+  width: 100%;
+  background: white;
+  border: 1px solid #ececec;
 }
 
 .nav-container{
@@ -31,28 +32,35 @@ nav{
   gap: 1rem;
 }
 
-.nav-links li > a {
-  display: block;
+.nav-links li {
+  display: flex;
   height: 2rem;
-  padding: .5rem 1rem;
   border-radius: .3rem;
   font-size: 1rem;
   line-height: 1rem; 
-  background: rgb(234, 235, 238);
+  overflow: hidden;
+  color: grey;
 }
 
-.nav-links li > a:hover {
-  background: rgb(220, 222, 231);
+.nav-links li a {
+  padding: .5rem 1rem;  
+  -webkit-tap-highlight-color: transparent;
 }
 
-.nav-links li > a:active {
-  background: rgb(64, 86, 161);
-  color: white;
+.nav-links li a:hover {
+  background: rgb(250, 250, 250);
 }
 
+
+.nav-links li > a.active {
+  /*background: rgb(88, 81, 155);*/
+  color: #000;
+  font-weight: 600;
+}
 
 .nav-buttons{
   display: flex;
+  align-items: center;
   gap: .5rem;
 }
 
@@ -64,6 +72,7 @@ nav{
   font-size: 1.25rem;
   border-radius: .3rem;
   border: none;
+  cursor: pointer;
   background: rgb(234, 235, 238);
   user-select: none;
 }
@@ -83,27 +92,37 @@ nav{
 @media screen and (max-width: 620px) {
   .nav-links{
     position: absolute;
-    left: 0;
-    right: 0;
     top: 99%;
-    flex-direction: column;
-    padding: 1rem;
-    background: white;
-    width: 90vw;
-    margin-inline: auto;
     margin-top: 1rem;
+    width: 90vw;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+    margin-inline: auto;
     border-radius: .3rem;
+    padding: 1rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 250ms ease-in;
+    box-shadow:
+    0px 4.3px 1.7px rgba(0, 0, 0, 0.01),
+    0px 12px 4.6px rgba(0, 0, 0, 0.015),
+    0px 28.9px 11.2px rgba(0, 0, 0, 0.02),
+    0px 96px 37px rgba(0, 0, 0, 0.03)
+  ;
   }
-
-  .nav-links li > a{
+  .nav-links li{
     height: 3.5rem;
+  }
+ 
+  .nav-links li > a{
     width: 100%;
+    height: 100%;
     display: inline-flex;
     align-items: center;
     font-size: 1.12rem;
+    border: 1px solid rgb(246, 246, 246);
+    overflow: hidden;
+    border-radius: .3rem;
   }
 
   .nav-buttons .toggle-btn{

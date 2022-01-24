@@ -1,8 +1,11 @@
 
 .item-detail-img{
+  display: grid;
+  place-content: center;
   background: rgba(212, 213, 218, 0.24);
   border: 1px solid rgb(197, 201, 206);
   border-radius: .5rem;
+  height: auto;
 }
 
 .item-detail-info{
@@ -11,12 +14,26 @@
 
 .item-detail-category{
   display: inline-block;
-
-  background: rgb(96, 79, 192);
+  background: rgb(238, 238, 238);
   color: white;
   padding: .2rem .4rem;
   border-radius: .3rem;
   margin-bottom: .3rem;
+}
+
+.item-detail-category.notebooks{
+  background: rgb(96, 79, 192);
+  color: white;
+}
+
+.item-detail-category.componentes{
+  background: rgb(96, 192, 79);
+  color: white;
+}
+
+.item-detail-category.perifericos{
+  background: rgb(79, 132, 192);
+  color: white;
 }
 
 .item-detail-info h2{
@@ -41,7 +58,9 @@
 }
 
 .item-detail-stock{
+  display: block;
   color: grey;
+  margin-bottom: .5rem;
 }
 
 
@@ -51,5 +70,6 @@
   }
   .item-detail-img{
     justify-self: center;
+    width: 100%;
    }
 }

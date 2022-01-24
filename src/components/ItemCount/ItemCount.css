@@ -1,6 +1,5 @@
 
 .itemcount-container{
-  background: white;
   border-radius: .3rem;
   display: flex;
   align-items: center;
@@ -57,6 +56,18 @@
 }
 
 @media screen and (max-width: 1024px) {
+
+  .count-container{
+    max-width: 50%;
+  }
+  
+  .item-btn{
+    width: 50%;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
   .itemcount-container{
     flex-direction: column;
   }
