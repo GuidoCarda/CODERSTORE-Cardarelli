@@ -5,7 +5,6 @@ import Loading from '../Loading/Loading'
 import './ItemListContainer.css'
 import products from './products'
 
-
 const ItemListContainer = () => {
   
   const [items,setItems] = useState([])

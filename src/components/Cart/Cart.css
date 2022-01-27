@@ -1,0 +1,32 @@
+
+.cart-list h2{
+  margin-top: 2rem;
+  color: rgb(50, 51, 61);
+}
+
+.cart-list p{
+  color: rgb(115, 117, 134);
+  font-size: .875rem;
+}
+
+.cart-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid rgb(199, 199, 199);
+  background: white;
+  border-radius: .3rem;
+  margin-block: 2rem;
+}
+
+.cart-item button{
+  height: 2rem;
+  width: 2rem;
+  border-radius: .3rem;
+  border: 1px solid grey;
+  cursor: pointer;
+  color: white;
+  background: rgb(142, 140, 231);
+}

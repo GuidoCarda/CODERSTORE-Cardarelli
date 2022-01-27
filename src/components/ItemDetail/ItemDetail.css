@@ -63,6 +63,24 @@
   margin-bottom: .5rem;
 }
 
+.to-cart-btn{
+  height: 2.5rem;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .3px;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding-inline: 1.5rem;
+  font-weight: bold;
+  background: rgb(34, 62, 156);
+  border-radius: .3rem;
+  border: 2px transparent;
+  cursor: pointer;
+  color:rgb(238, 238, 238);
+}
+
 
 @media screen and (max-width: 1024px) {
   .item-detail{

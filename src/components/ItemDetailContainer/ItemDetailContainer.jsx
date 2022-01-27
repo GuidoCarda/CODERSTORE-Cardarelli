@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading'
 import './ItemDetailContainer.css'
 import { useParams } from 'react-router-dom'
 
-const ItemDetailContainer = ({onAdd}) => {
+const ItemDetailContainer = () => {
   
   const getItem = (id) => {
     return new Promise( (resolve,reject) => {
@@ -29,7 +29,7 @@ const ItemDetailContainer = ({onAdd}) => {
 
   return (
     <div className="container item-detail">    
-      { loading ? <Loading/> : <ItemDetail item={item} onAdd={onAdd}/>}
+      { loading ? <Loading/> : <ItemDetail item={item}/>}
     </div>
   )
 }

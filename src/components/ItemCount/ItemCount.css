@@ -1,5 +1,4 @@
-
-.itemcount-container{
+  .itemcount-container{
   border-radius: .3rem;
   display: flex;
   align-items: center;
@@ -29,6 +28,7 @@
   outline: none;
   color: rgb(72, 104, 179);
   border: none;
+  cursor: pointer;
 }
 
 .control-btn:hover{
@@ -36,16 +36,22 @@
 }
 
 .item-btn{
+  display: inline-flex;
   height: 2.5rem;
   border-radius: .3px;
   font-size: 1rem;
+  line-height: 1rem;
   padding-inline: 1.5rem;
   font-weight: bold;
   background: rgb(34, 62, 156);
   border-radius: .3rem;
   border: 2px transparent;
+  cursor: pointer;
   color:rgb(238, 238, 238);
+  align-items: center;
+  justify-content: center;
 }
+
 
 .control-btn:disabled,
 .item-btn:disabled{
@@ -79,5 +85,7 @@
   .item-btn{
     width: 100%;
   }
+
+
   
 }
