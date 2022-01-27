@@ -22,9 +22,6 @@ Cada card al clickearse nos lleva a el detalle del item en cuestion, este detall
 
 ### Representación de la navegabilidad del sitio
 
-<<<<<<< HEAD
-![Gif representativo del uso del sitio](https://media.giphy.com/media/beKvJDhUjHSntdG938/giphy.gif)
-=======
 ![Hnet-image](https://user-images.githubusercontent.com/78933518/150866677-7da3a6af-0f67-4479-af43-51f0d769adcd.gif)
 
 >>>>>>> 0927618c2ac9c2837690f3c191db708a92615dcf
