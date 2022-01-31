@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
@@ -7,8 +8,11 @@ const ItemDetail = ({item}) => {
 
   const [ itemQty, setItemQty ] = useState(0)
 
+  const { addItem } = useContext(CartContext)
+
   const onAdd = (quantityToAdd) =>{
     setItemQty(quantityToAdd)
+    addItem(item,quantityToAdd)
     alert(`Added ${quantityToAdd} ${quantityToAdd > 1 ? 'items' : 'item'} to the cart`)
   }
 
@@ -36,12 +40,20 @@ const ItemDetail = ({item}) => {
         </div>
           { itemQty === 0 
               ? <ItemCount stock={item.stock} initial={ item.stock ? 1 : 0} onAdd={onAdd}/> 
-              : <Link 
-                to={'/cart'}
-                className="to-cart-btn"
-                >  
-                Ir al carrito
-              </Link>
+              : <>
+                <Link 
+                  to={'/cart'}
+                  className="to-cart-btn"
+                  >  
+                  Ir al carrito
+                </Link>
+                <Link 
+                  to={'/'}
+                  className="to-home-btn"
+                  >  
+                  Seguir comprando
+                </Link>
+              </>
           } 
       </div>
     </>

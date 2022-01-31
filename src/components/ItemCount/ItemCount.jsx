@@ -13,7 +13,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <div className="itemcount-container">
       <div className="count-container">
-        <button className='control-btn' onClick={removeItem} disabled={count === 0}><FaMinus/></button>
+        <button className='control-btn' onClick={removeItem} disabled={count === 1 }><FaMinus/></button>
         <span>{count}</span>
         <button className='control-btn'  onClick={addItem} disabled={ count === stock || stock === 0}><FaPlus/></button>
       </div>

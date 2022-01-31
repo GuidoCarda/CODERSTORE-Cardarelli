@@ -21,7 +21,7 @@ const NavBar = () => {
   
         <div className="nav-buttons">
           <button className="toggle-btn" onClick={handleToggle}> <FaBars/> </button>
-          <button className="cart-btn"><CartWidget/></button>
+          <NavLink to='/cart' className="cart-btn"><CartWidget/></NavLink>
         </div>
       </div>
     </nav>

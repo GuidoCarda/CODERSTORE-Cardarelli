@@ -1,7 +1,7 @@
 import React from 'react'
 import './Item.css'
 
-const Item = ({product, onAdd}) => {
+const Item = ({product}) => {
   return (
     <div className='item'>
       <img className='item-img' src={product.pictureURL} alt="" />

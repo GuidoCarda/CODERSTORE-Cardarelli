@@ -63,7 +63,8 @@
   margin-bottom: .5rem;
 }
 
-.to-cart-btn{
+.to-cart-btn,
+.to-home-btn{
   height: 2.5rem;
   width: 100%;
   display: inline-flex;
@@ -81,6 +82,9 @@
   color:rgb(238, 238, 238);
 }
 
+.to-home-btn{
+  margin-top: 1rem;
+}
 
 @media screen and (max-width: 1024px) {
   .item-detail{
