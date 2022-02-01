@@ -41,8 +41,12 @@
   justify-content: space-between;
   width: 100%;
   padding: 2rem;
-  border-radius: .3rem;
 }
+
+.cart-item:not(:last-child){
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
 
 .cart-item button{
   height: 2rem;
@@ -62,4 +66,17 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+@media screen and (max-width: 900px){
+  .cart-item,
+  .cart-item-detail{
+    flex-direction: column;
+  }
+  
+  .cart-item button{
+    height: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
 }

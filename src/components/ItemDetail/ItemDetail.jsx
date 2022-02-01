@@ -13,7 +13,6 @@ const ItemDetail = ({item}) => {
   const onAdd = (quantityToAdd) =>{
     setItemQty(quantityToAdd)
     addItem(item,quantityToAdd)
-    alert(`Added ${quantityToAdd} ${quantityToAdd > 1 ? 'items' : 'item'} to the cart`)
   }
 
   // Para simular al actualización de stock

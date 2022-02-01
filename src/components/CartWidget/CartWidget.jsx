@@ -13,7 +13,7 @@ const CartWidget = () => {
   return (
     <>
       <FaShoppingCart/>
-      <span className='cart-total'>{cartTotal}</span>
+      {cartTotal ? <span className='cart-total'>{cartTotal}</span> : null}
     </>
   )
 }

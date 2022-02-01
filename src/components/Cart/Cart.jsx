@@ -12,6 +12,15 @@ const Cart = () => {
   cart.map(item => cartTotal = cartTotal + (item.price * item.qty))
   console.log(cart)
 
+  const formatPrice = (price) =>{ 
+    const config = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
+
+    return config.format(price)
+  }
+
   return (
     <div className='container cart-list'>
       <header className='cart-header'>
@@ -26,8 +35,8 @@ const Cart = () => {
                 <img src={item.pictureURL} alt="" className='cart-item-img' />
                 <h3>{item.title}</h3>
                 <p>Cantidad: {item.qty}</p>
-                <p>P. unitario: ${item.price}</p>
-                <p>P. total: {item.price * item.qty}</p>
+                <p>P. unitario: {formatPrice(item.price)}</p>
+                <p>P. total: {formatPrice(item.price * item.qty)}</p>
               </div>
               <button onClick={()=> removeItem(item.id)}>x</button>
             </div>
@@ -35,7 +44,7 @@ const Cart = () => {
         })}
       </div>
       
-      {cartTotal ? <h2>Total del carrito {cartTotal}</h2> : null }
+      {cartTotal ? <h2>Total del carrito {formatPrice(cartTotal)}</h2> : null }
       <Link className="cart-link" to='/'>Volver al inicio</Link>
     </div>
   )
