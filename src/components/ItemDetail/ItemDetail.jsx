@@ -20,6 +20,8 @@ const ItemDetail = ({item}) => {
     item.stock = item.stock - itemQty
   },[item, itemQty])
 
+  console.log('detail rendered')
+
   return (
     <>
       <div className="item-detail-img">

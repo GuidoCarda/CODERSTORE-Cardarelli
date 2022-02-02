@@ -8,18 +8,18 @@
   --font-secondary: rgb(100, 101, 119);
 
 }
-body{
-  overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif;
-  background: var(--bg-clr)
-}
-html{
- margin-left: calc(100vw - 100%);
-}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bg-clr)
 }
 
 ul{
@@ -43,3 +43,19 @@ img{
   padding-block: 1rem 4rem;
 }
 
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 2.5rem;
+  padding-inline: 1.5rem;
+  border-radius: .3rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-span{
+  width: 100%;
+}

@@ -20,8 +20,9 @@ const NavBar = () => {
         </ul>
   
         <div className="nav-buttons">
-          <button className="toggle-btn" onClick={handleToggle}> <FaBars/> </button>
-          <NavLink to='/cart' className="cart-btn"><CartWidget/></NavLink>
+          <button className="nav-btn toggle-btn" onClick={handleToggle}> <FaBars/> </button>
+          <button className="user"></button>
+          <NavLink to='/cart' className="nav-btn"><CartWidget/></NavLink>
         </div>
       </div>
     </nav>
