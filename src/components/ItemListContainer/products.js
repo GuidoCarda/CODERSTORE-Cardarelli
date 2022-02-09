@@ -1,7 +1,8 @@
 const products = [
   {
     id: 'dasda1',
-    title: 'Logitech g PRO',
+    /*title: 'Logitech g PRO',*/
+    title: 'Logitech g PRO da a adasdasdad asdasda',
     description: 'Esto es una descripcion de ejemplo',
     stock: 5,
     price: 15500,

@@ -1,6 +1,6 @@
 .items-container{
   margin-top: 4rem;
-  padding: 3rem 0;
+  padding: 1rem 0;
   width: min(1200px, 90vw);
   margin-inline: auto;
 }

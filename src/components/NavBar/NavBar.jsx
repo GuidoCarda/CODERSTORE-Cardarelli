@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './NavBar.css'
 import { FaBars   } from 'react-icons/fa'
 import CartWidget from '../CartWidget/CartWidget';
+import {AiOutlineUser } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -12,7 +13,10 @@ const NavBar = () => {
   return (
     <nav>
       <div className="nav-container">
-       <span className='nav-logo'><NavLink to="/">MISTEC</NavLink></span>
+        <div>
+          <button className="nav-btn toggle-btn" onClick={handleToggle}> <FaBars/> </button>
+          <span className='nav-logo'><NavLink to="/">MISTEC</NavLink></span>
+        </div>
         <ul className={`nav-links ${isOpen&&'active'}`}>
           <li><NavLink onClick={handleToggle} to='/category/componentes'>componentes</NavLink></li>
           <li><NavLink onClick={handleToggle} to='/category/perifericos' >perifericos</NavLink></li>
@@ -20,8 +24,7 @@ const NavBar = () => {
         </ul>
   
         <div className="nav-buttons">
-          <button className="nav-btn toggle-btn" onClick={handleToggle}> <FaBars/> </button>
-          <button className="user"></button>
+          <button className="nav-btn"><AiOutlineUser/></button>
           <NavLink to='/cart' className="nav-btn"><CartWidget/></NavLink>
         </div>
       </div>

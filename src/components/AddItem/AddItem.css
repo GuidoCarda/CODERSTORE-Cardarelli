@@ -1,0 +1,88 @@
+.container.addItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  justify-content: center;
+}
+
+.item-upload-form{
+  background: white;
+  width: min(50rem, 90vw);
+  margin-inline: auto;
+  border-radius: .3rem;
+  border: 1px solid rgb(233, 233, 233);
+  padding: 3rem 2rem;
+}
+
+.addItem-title{
+  font-size: var(--h1-font-size);
+  border-bottom: 1px solid rgb(226, 226, 226);
+  margin-bottom: 2rem;
+  padding-bottom: .8rem;
+}
+
+.container.addItem button{
+  height: 2.5rem;
+}
+
+.form-field h3{
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
+
+.form-field > #description{
+  resize: none;
+  display: block;
+  height: 8rem;
+}
+
+.form-field input[type='file']{
+  display: none;
+}
+
+.form-field input,
+.form-field textarea,
+.form-field.file-upload{
+  height: 2.5rem;
+  border-radius: .3rem;
+  border: 2px solid rgb(212, 212, 212);
+  font-size: 1rem;
+  width: 100%;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: .5rem;
+  color: var(--font-primary);
+}
+
+.form-field input:focus{
+  border-color: var(--clr-primary);
+}
+
+.form-field.file-upload{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-block: 1rem 2rem;
+  cursor: pointer;
+}
+
+.file-upload svg{
+  font-size: 1.5rem;
+}
+
+.file-upload span{
+  font-size: var(--normal-font-size);
+  line-height: 2.5rem;
+}
+
+.form-field.file{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+

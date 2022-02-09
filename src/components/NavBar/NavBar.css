@@ -19,6 +19,12 @@ nav{
   justify-content: space-between;
 }
 
+.nav-container div:first-child{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-logo{
   font-size: 1.25rem;
   line-height: 1.25rem;
@@ -39,6 +45,7 @@ nav{
   line-height: 1rem; 
   overflow: hidden;
   color: grey;
+  animation: none;
 }
 
 .nav-links li a {
@@ -85,19 +92,21 @@ nav{
 }
 
 @media screen and (max-width: 620px) {
+  nav{
+    z-index: 100;
+  }
   .nav-links{
     position: absolute;
     top: 99%;
     margin-top: 1rem;
     width: 90vw;
+    z-index: 10;
     flex-direction: column;
     background: rgb(255, 255, 255);
     margin-inline: auto;
     border-radius: .3rem;
     padding: 1rem;
-    opacity: 0;
     visibility: hidden;
-    transition: opacity 250ms ease-in;
     box-shadow:
     0px 4.3px 1.7px rgba(0, 0, 0, 0.01),
     0px 12px 4.6px rgba(0, 0, 0, 0.015),
@@ -123,13 +132,12 @@ nav{
   .nav-btn.toggle-btn{
     display: grid;
   }
+  .nav-links.active{
+    visibility: visible;
+    animation: 300ms navToggle ease-in-out;
+  }
+  
 }
-
-.nav-links.active{
-  opacity: 1;
-  visibility: visible;
-}
-
 .user{
   height: 2rem;
   width: 2rem;

@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import Loading from '../Loading/Loading'
 import './ItemListContainer.css'
-import products from './products'
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from '../../firebase'
 
 const ItemListContainer = () => {
   
@@ -14,23 +15,25 @@ const ItemListContainer = () => {
 
   useEffect( ()=> {
     setLoading(true);
-    const promise = new Promise((resolve,reject)=>{
-      setTimeout(()=>{
-        resolve(products)
-      },500)
-    })
+    
+    const getItems = async ()=>{
+      let collectionQuery
+      if(!id){
+        collectionQuery = collection(db, "items")
+      }else{
+        collectionQuery = query(collection(db, "items"), where('category', '==', `${id}`))
+      }
+      const snapshot = await getDocs(collectionQuery);
+      setItems( snapshot.docs.map( itemSnapshot => ({id: itemSnapshot.id, ...itemSnapshot.data()})) )
+    }
 
-    promise.then( response => {
-      setItems( id ? response.filter( item => item.category === id ) : response);
-      setLoading(false);
-    })
-  }, [id])
-
-  const addToCart = ( count ) => alert(`${count} ${ count > 1 ? 'items agregados' : 'item agregado'} al carrito`)
+    getItems()
+    setLoading(false)
+  }, [id])  
   
   return (
     <div className="container">
-      { loading ? <Loading/> : <ItemList items={items} onAdd={addToCart} />}
+      { loading ? <Loading/> : <ItemList items={items}/> }
     </div>
   )
 }

@@ -9,7 +9,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
   const addItem = () => setCount(count + 1)
   const removeItem = () => setCount(count - 1)
-  
+
   return (
     <div className="itemcount-container">
       <div className="count-container">

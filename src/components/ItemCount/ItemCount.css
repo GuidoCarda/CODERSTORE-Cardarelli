@@ -43,7 +43,7 @@
   line-height: 1rem;
   padding-inline: 1.5rem;
   font-weight: bold;
-  background: rgb(34, 62, 156);
+  background: var(--clr-primary);
   border-radius: .3rem;
   border: 2px transparent;
   cursor: pointer;

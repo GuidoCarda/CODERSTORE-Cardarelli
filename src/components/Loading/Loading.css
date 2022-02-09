@@ -6,15 +6,16 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  height: calc(100vh);
+  min-height: calc(100vh);
   z-index: -10;
+  background: rgb(255, 255, 255);
 }
 
 .loading > * {
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
-  background: rgb(53, 76, 177);
+  background: var(--clr-primary);
   animation: 0.9s bounce infinite alternate;
 }
 
@@ -30,5 +31,12 @@
   to {
     opacity: 0.3;
     transform: translate3d(0, -1rem, 0);
+  }
+}
+
+
+@keyframes fade-out-loading {
+  to{
+    opacity: 1;
   }
 }

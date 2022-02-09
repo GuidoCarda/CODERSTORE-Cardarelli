@@ -1,10 +1,15 @@
 .item-list{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  align-items: stretch;
   gap: 1rem;
+  animation: animation1 500ms ease-in-out;
 }
 
 .item-list-title{
   font-size: 2rem;
-  padding-block: 5rem 2rem;
+  padding-block: 1rem 2rem;
+  text-align: center;
+  font-size: var(--h1-font-size);
 }
+
