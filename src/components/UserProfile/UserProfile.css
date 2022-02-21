@@ -1,0 +1,117 @@
+
+.container.user-profile{
+  display: flex; 
+  flex-direction: column;
+}
+
+.orders-header{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  margin-block: 1rem 2rem;
+}
+
+.orders-table-container{
+  border-radius: .3rem;
+  border: 1px solid rgb(226, 226, 226); 
+  animation: .3s animation1 ease-in;
+}
+
+@media screen and (max-width: 1300px){
+  .orders-table-container{
+    overflow-x: scroll;
+  }
+}
+
+.orders-table{
+  border-collapse: collapse;
+  border-radius: 1rem;
+  min-width: 100%;
+}
+
+.orders-table td,th{
+  padding: .5rem 1rem;
+  min-height: 3rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.orders-table tr{
+  border: 1px solid rgb(243, 243, 243);
+  background: white;
+}
+
+
+.orders-table thead{
+  background: rgb(240, 240, 240);
+  color: rgb(73, 73, 73);
+  text-transform: uppercase;
+  font-size: var(--normal-font-size);
+}
+
+.order-id{
+  font-size: var(--small-font-size);
+}
+
+.order-item > span{
+  color: var(--clr-primary);
+  font-weight: var(--font-bold);
+}
+
+.order-price{
+  font-weight: var(--font-bold);
+}
+
+.empty-orders{
+  flex: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: white;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: .3rem;
+  animation: .3s animation1 ease-in;
+}
+
+.empty-orders span{
+  justify-self: center;
+  border-radius: .3rem; 
+  margin-bottom: .5rem;
+  background: rgb(255, 219, 219);
+  color: rgb(207, 59, 59);
+  width: 4rem;
+  display: grid;
+  place-content: center;
+  height: 4rem;
+  font-size: 2.5rem;
+}
+
+
+.empty-orders a{
+  display: block;
+  width: max-content;
+  justify-self: center;
+  margin-top: 1rem;
+  padding: .5rem .7rem;
+  border-radius: .3rem;
+  color: var(--clr-primary);
+  font-weight: var(--font-bold);
+}
+
+
+/*
+.order > *{
+  border: 1px solid red;
+} 
+
+*/
+
+@media screen and (max-width: 480px){
+  .orders-header .btn.icon-btn{
+    font-size: 0;
+    gap: 0;
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

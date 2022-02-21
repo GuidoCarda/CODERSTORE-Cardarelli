@@ -7,6 +7,8 @@ import NotFound from './components/NotFound/NotFound';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './context/CartContext';
 import AddItem from './components/AddItem/AddItem';
+import CheckoutForm from './components/CheckoutForm/CheckoutForm';
+import UserProfile from './components/UserProfile/UserProfile';
 
 function App() { 
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<Cart/>} />
           <Route path='/addItems' element={<AddItem/>} />
+          <Route path='/checkout' element={<CheckoutForm/>} />
+          <Route path='/userProfile' element={<UserProfile/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>

@@ -5,6 +5,10 @@ import { CartContext } from '../../context/CartContext'
 import { MdDeleteForever, MdOutlineClose, MdCancelPresentation } from 'react-icons/md'
 import './Cart.css'
 import { formatPrice } from '../../helpers'
+/*
+import { addDoc, collection, Timestamp } from 'firebase/firestore'
+import { db } from '../../firebase'
+*/
 
 const Cart = () => {
   
@@ -12,8 +16,6 @@ const Cart = () => {
 
   let cartTotal = 0;
   cart.map(item => cartTotal = cartTotal + (item.price * item.qty))
-
-  console.log(cart)
 
   return (
     <section>
@@ -48,7 +50,7 @@ const Cart = () => {
               <span>Total: </span>
               <p className='cart-total-price'>{formatPrice(cartTotal)}</p>
             </div>
-            <button className='btn btn-span btn-primary'>Finalizar compra</button>
+            <Link className="cart-btn" to='/checkout'>Finalizar compra</Link> 
             <Link to='/'>o continua comprando</Link>
           </div>
         </div> : null}
@@ -60,7 +62,6 @@ const Cart = () => {
             <Link className="cart-link" to='/'>Volver al inicio</Link> 
           </div>
         }
-
       </div>
     </section>
   )

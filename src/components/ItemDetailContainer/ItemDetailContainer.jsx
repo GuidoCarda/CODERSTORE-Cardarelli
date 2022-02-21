@@ -15,14 +15,15 @@ const ItemDetailContainer = () => {
   const [loading,setLoading] = useState(true)
 
   useEffect(()=>{
+    
     const getItem = async ()=>{
       const itemRef = doc(db, "items", `${id}`)
       const itemSnapshot = await getDoc(itemRef)
 
       setItem({id: itemSnapshot.id, ...itemSnapshot.data()})
-      setLoading(false)
     }
     getItem()
+    setTimeout(()=>setLoading(false),1000)
   },[id])
 
   return (

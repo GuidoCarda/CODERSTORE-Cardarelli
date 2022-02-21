@@ -135,6 +135,16 @@
   color: var(--clr-primary);
 }
 
+.cart-summary .cart-btn{
+  height: 2.5rem;
+  background: var(--clr-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .3rem;
+}
+
 .empty-cart{
   flex: 1;
   display: grid;
@@ -167,6 +177,8 @@
   font-size: 2.5rem;
 }
 
+
+
 @media (max-width: 480px){
   .cart-items-wrapper{
     animation: none;
@@ -175,7 +187,7 @@
   .cart-items{
     padding: 0;
     border: none;
-    gap: 1.5rem;
+    gap: 1rem;
     animation: 500ms animation2 ease-in;
     overflow: visible;
     background: none;
@@ -227,7 +239,7 @@
     text-align: center;
   }
 
-  .cart-summary > button{
+  .cart-summary .cart-btn{
     height: 3.5rem;
   }
   

@@ -1,5 +1,29 @@
-.not-found{
+.container.not-found{
   display: grid;
   place-content: center;
-  width: 100vw;
+}
+
+.not-found-container{
+  max-width: 30rem;
+  background: white;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: .3rem;
+}
+
+.not-found-container h2{
+  font-size: var(--h1-font-size);
+  color: rgb(34, 55, 80);
+  max-width: 30ch;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.not-found-container a{
+  font-size: var(--h3-font-size);
+  background: var(--clr-primary);
+  font-weight: var(--font-bold);
+  padding: .3rem .5rem; 
+  border-radius: .3rem;
 }

@@ -6,10 +6,12 @@ import './ItemListContainer.css'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../../firebase'
 
+import products from './products'
+
 const ItemListContainer = () => {
   
   const [items,setItems] = useState([])
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(true)
   
   const { id } = useParams();
 
@@ -28,7 +30,8 @@ const ItemListContainer = () => {
     }
 
     getItems()
-    setLoading(false)
+    
+    setTimeout(()=>(setLoading(false)), 1000)
   }, [id])  
   
   return (

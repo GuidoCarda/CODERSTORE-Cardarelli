@@ -24,7 +24,7 @@ const NavBar = () => {
         </ul>
   
         <div className="nav-buttons">
-          <button className="nav-btn"><AiOutlineUser/></button>
+          <NavLink to='/userProfile' className="nav-btn"><AiOutlineUser/></NavLink>
           <NavLink to='/cart' className="nav-btn"><CartWidget/></NavLink>
         </div>
       </div>

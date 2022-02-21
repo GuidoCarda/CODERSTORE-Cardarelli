@@ -1,0 +1,78 @@
+.container.checkout{
+  display: grid;
+  place-content: center;
+}
+.checkout-form{
+  background: white;
+  width: min(30rem, 90vw);
+  margin-inline: auto;
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+  border-radius: .3rem;
+  border: 1px solid rgb(221, 221, 221);
+}
+
+.checkout-form .form-field label{
+  display: block;
+  font-size: var(--normal-font-size);
+  margin-bottom: .3rem;
+}
+
+.checkout-form .form-error{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgb(211, 93, 93);
+  font-weight: var(--font-bold);
+}
+
+.checkout-form .checkout-header,
+.checkout-form .checkout-total{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.checkout-form .checkout-header{
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.checkout-form .checkout-header p{
+  color: grey;
+}
+
+.checkout-form .checkout-header button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: .3rem;
+  border: none;
+  font-size: 2rem;
+  border: 3px solid transparent;
+  background: transparent;
+}
+
+.checkout-form .checkout-header h2{
+  font-size: var(--h2-font-size);
+  max-width: 25ch;
+  margin-bottom: .5rem;
+}
+
+.checkout-form .checkout-total{
+  align-items: center;
+  margin-block: 1rem;
+  padding: .5rem 1rem;
+  background: rgb(246, 246, 246);
+  border-radius: .3rem;
+}
+
+.checkout-form .checkout-total span{
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  border-left: 1px solid rgb(207, 207, 207);
+  padding-left: .5rem;
+}

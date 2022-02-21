@@ -8,15 +8,18 @@ export const CartProvider = ({children}) => {
   const getLocalStorage = (key) => JSON.parse(localStorage.getItem(key)) ?? []
   const setLocalStorage = (key, data) => localStorage.setItem(key, JSON.stringify(data)) 
   
-  //
-  const [cart, setCart] = useState(()=>{
-    const localStorageCart = getLocalStorage('cart')
-    return localStorageCart || []
-  })
+  const initializeLocalStorage = (key)=> {
+    const localData = getLocalStorage(key)
+    return localData || []
+  }
+
+  const [ cart, setCart ] = useState(()=> initializeLocalStorage('cart') )
+  const [ orders, setOrders ] = useState(()=> initializeLocalStorage('orders') )
 
   useEffect(()=>{
     setLocalStorage('cart', cart);
-  },[cart])
+    setLocalStorage('orders', orders);
+  },[cart, orders])
 
   let cartTotal = 0
   cart.map( item => cartTotal = cartTotal + item.qty )
@@ -45,8 +48,11 @@ export const CartProvider = ({children}) => {
   //true / false - checkear si esta en el carrito
   const isInCart = (id) => cart.find( item => item.id === id )
 
+  const addOrder = ( orderData, orderId) => { setOrders([...orders, {...orderData, orderId: orderId}]) }
+  const clearOrders = () => setOrders([])
+
   return (
-    <CartContext.Provider value={{addItem, removeItem, clear, cart, cartTotal}}>
+    <CartContext.Provider value={{addItem, removeItem, clear, cart, cartTotal, orders, addOrder, clearOrders}}>
       {children}
     </CartContext.Provider>
   )
