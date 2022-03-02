@@ -5,14 +5,11 @@ import { CartContext } from '../../context/CartContext'
 import { MdDeleteForever, MdOutlineClose, MdCancelPresentation } from 'react-icons/md'
 import './Cart.css'
 import { formatPrice } from '../../helpers'
-/*
-import { addDoc, collection, Timestamp } from 'firebase/firestore'
-import { db } from '../../firebase'
-*/
+import ItemCount from '../ItemCount/ItemCount'
 
 const Cart = () => {
   
-  const { removeItem, clear, cart } = useContext(CartContext)
+  const { removeItem, clear, cart, handleAdd, handleRemove} = useContext(CartContext)
 
   let cartTotal = 0;
   cart.map(item => cartTotal = cartTotal + (item.price * item.qty))
@@ -38,8 +35,14 @@ const Cart = () => {
                       <p className='cart-item-price'>{formatPrice(item.price)}</p>
                       <p className='cart-item-qty'>x {item.qty}u.</p>
                     </div>
-                    <button className='btn-delete' onClick={()=> removeItem(item.id)}><MdOutlineClose/></button>
+                    <ItemCount 
+                      stock={item.stock}
+                      itemQty={item.qty}
+                      handleAdd={()=>handleAdd(item)}
+                      handleRemove={()=>handleRemove(item)}
+                    /> 
                   </div>
+                    <button className='btn-delete' onClick={()=> removeItem(item.id)}><MdOutlineClose/></button>
                 </div>
               )
             })}

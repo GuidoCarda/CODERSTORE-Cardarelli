@@ -1,16 +1,8 @@
-.itemcount-container{
-  border-radius: .3rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
 
 .count-container{
-  margin-top: auto;
-  width: 100%;
   display: grid;
   grid-template-columns: 2rem auto 2rem;
-  max-width: 10rem;
+  width: 10rem;
   height: 2.5rem;
   border: 1px solid rgb(179, 179, 179);
   border-radius: .3rem;
@@ -62,30 +54,13 @@
 }
 
 @media screen and (max-width: 1024px) {
-
   .count-container{
-    max-width: 50%;
-  }
-  
-  .item-btn{
     width: 50%;
   }
-  
 }
 
 @media screen and (max-width: 600px) {
-  .itemcount-container{
-    flex-direction: column;
-  }
-
   .count-container{
-    max-width: 100%;
-  }
-  
-  .item-btn{
     width: 100%;
   }
-
-
-  
 }

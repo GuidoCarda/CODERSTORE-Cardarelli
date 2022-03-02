@@ -9,6 +9,7 @@ import { CartProvider } from './context/CartContext';
 import AddItem from './components/AddItem/AddItem';
 import CheckoutForm from './components/CheckoutForm/CheckoutForm';
 import UserProfile from './components/UserProfile/UserProfile';
+import Footer from './components/Footer/Footer';
 
 function App() { 
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/userProfile' element={<UserProfile/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </CartProvider>
   );

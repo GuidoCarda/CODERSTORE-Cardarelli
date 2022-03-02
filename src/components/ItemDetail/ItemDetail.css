@@ -14,6 +14,11 @@
   animation: 300ms animation1 ease-in;
 }
 
+.item-count-container{
+  display: flex;
+  gap: 2rem;
+}
+
 .item-detail-category{
   display: inline-block;
   background: rgb(238, 238, 238);
@@ -89,6 +94,7 @@
   margin-top: 1rem;
 }
 
+
 @media screen and (max-width: 1024px) {
   .item-detail{
     grid-template-columns: 1fr;
@@ -96,5 +102,21 @@
   .item-detail-img{
     justify-self: center;
     width: 100%;
-   }
+  }
+  .item-count-container{
+   gap: 1rem;
+  }
+  .item-count-container .item-btn{
+    width: 50%;
+  }
 }
+
+@media screen and (max-width: 600px) {
+  .item-count-container{
+    flex-direction: column;
+  }
+  .item-count-container .item-btn{
+    width: 100%;
+  }
+}
+ 

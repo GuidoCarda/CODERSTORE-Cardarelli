@@ -20,10 +20,6 @@ const CheckoutForm = () => {
   const [ formErrors, setFormErrors ] = useState({});
   const [ isSubmitted, setIsSubmitted ] = useState(false);
 
-  useEffect(()=>{
-    setIsSubmitted(false)
-  },[])
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setBuyer({
@@ -142,6 +138,7 @@ const CheckoutForm = () => {
             name="phone"
             value={buyer.phone || ''}
             onChange={handleChange}
+            placeholder={'xxx xxxxxx'}
             min='0'
           />
           { formErrors.phone && <span className='form-error'>{formErrors.phone}</span> }
@@ -165,7 +162,6 @@ const CheckoutForm = () => {
         <button type='submit' className='btn btn-span btn-primary'>Finalizar compra</button>
       </form>
     </div>
-
   }
   </>
   )

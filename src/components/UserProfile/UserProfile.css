@@ -67,8 +67,6 @@
   display: grid;
   place-content: center;
   text-align: center;
-  background: white;
-  border: 1px solid rgb(211, 211, 211);
   border-radius: .3rem;
   animation: .3s animation1 ease-in;
 }
@@ -76,7 +74,7 @@
 .empty-orders span{
   justify-self: center;
   border-radius: .3rem; 
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
   background: rgb(255, 219, 219);
   color: rgb(207, 59, 59);
   width: 4rem;
@@ -91,11 +89,14 @@
   display: block;
   width: max-content;
   justify-self: center;
-  margin-top: 1rem;
   padding: .5rem .7rem;
   border-radius: .3rem;
   color: var(--clr-primary);
   font-weight: var(--font-bold);
+}
+
+.empty-orders a:hover{ 
+  background: rgb(236, 245, 238);
 }
 
 

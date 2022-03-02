@@ -45,6 +45,23 @@ export const CartProvider = ({children}) => {
   //Remover todos los items
   const clear = () => setCart([])
 
+  const handleAdd = ( item ) => {
+    return setCart( cart
+      .map( cartItem => cartItem.id === item.id 
+        ? {...cartItem, qty : cartItem.qty + 1 } 
+        : cartItem )
+    )
+  }
+
+  const handleRemove = ( item ) => {
+    console.log('remove')
+    return setCart( cart
+      .map( cartItem => cartItem.id === item.id 
+        ? {...cartItem, qty : cartItem.qty - 1} 
+        : cartItem )
+    )
+  }
+
   //true / false - checkear si esta en el carrito
   const isInCart = (id) => cart.find( item => item.id === id )
 
@@ -52,7 +69,7 @@ export const CartProvider = ({children}) => {
   const clearOrders = () => setOrders([])
 
   return (
-    <CartContext.Provider value={{addItem, removeItem, clear, cart, cartTotal, orders, addOrder, clearOrders}}>
+    <CartContext.Provider value={{addItem, removeItem, isInCart,clear, handleAdd ,handleRemove, cart, cartTotal, orders, addOrder, clearOrders}}>
       {children}
     </CartContext.Provider>
   )

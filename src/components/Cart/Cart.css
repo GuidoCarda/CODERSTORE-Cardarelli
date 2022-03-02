@@ -42,6 +42,8 @@
 .cart-item{
   /*border: 1px solid green;*/
   display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .cart-item-detail{
@@ -49,9 +51,16 @@
   display: flex;
   padding-left: 2rem;
   flex: 1;
+  gap: 1rem;
   align-items: center;
   justify-content: space-between;
 }
+
+.cart-item-detail .count-container{
+  min-width: 8rem;
+}
+
+
 
 .cart-item-img{
   height: 8rem;
@@ -60,6 +69,7 @@
   object-fit: contain;
   background: rgb(243, 244, 246);
   border-radius: .3rem;
+  align-self: flex-start;
 }
 
 .btn-delete{
@@ -71,6 +81,7 @@
   background: none;
   font-size: 2rem;
   color: var(--font-primary);
+  margin-left: .5rem;
 }
 
 .cart-item-title{
@@ -94,10 +105,6 @@
   margin-left: .5rem;
   color: var(--font-secondary);
   font-size: var(--small-font-size);
-}
-
-.cart-items-wrapper > div {
-  /*border: 3px solid rgb(155, 91, 91);*/
 }
 
 .cart-summary{
@@ -161,7 +168,20 @@
   display: grid;
   place-content: center;
   text-align: center;
-  margin-bottom: 1rem;
+}
+
+.empty-cart a{ 
+  display: block;
+  width: max-content;
+  justify-self: center;
+  padding: .5rem .7rem;
+  border-radius: .3rem;
+  color: var(--clr-primary);
+  font-weight: var(--font-bold);
+}
+
+.empty-cart a:hover{ 
+  background: rgb(236, 245, 238);
 }
 
 .empty-cart span{
@@ -175,6 +195,18 @@
   place-content: center;
   height: 4rem;
   font-size: 2.5rem;
+}
+
+.cart-item-qty-input{
+  height: 2.5rem;
+  border-radius: .3rem;
+  border: 1px solid grey;
+  outline: none;
+  padding-inline: .5rem;
+}
+
+.cart-item-qty-input::selection{
+  border: 1px solid rgb(53, 131, 89);
 }
 
 
@@ -191,17 +223,31 @@
     animation: 500ms animation2 ease-in;
     overflow: visible;
     background: none;
+    margin-bottom: 10rem;
   }
 
   .cart-item{
     padding: .5rem;
     border-radius: .3rem;
     background: white;
+    padding-bottom: 3rem;
   }
 
   .cart-item-detail{
-    padding: .5rem 1rem; 
+    padding: .5rem; 
     flex: 1;
+    width: 100%;
+    gap: .5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-detail .count-container{
+    width: 8rem;
+    height: 2rem;
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
   }
   .cart-item-detail div{
     max-width: 5;
@@ -210,7 +256,7 @@
   .cart-item-title{
     font-size: var(--h2-font-size);
     overflow: hidden;
-    max-width: 12ch;
+    max-width: 20ch;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-bottom: 0;
@@ -223,6 +269,9 @@
 
   .btn-delete{
     font-size: 1.75rem;
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
   }
 
   .cart-summary{

@@ -1,0 +1,14 @@
+.footer{
+  height: 4rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+}
+
+.footer p:last-of-type{
+  font-size: var(--small-font-size);
+  color: rgb(168, 168, 168);
+  line-height: .8rem;
+}

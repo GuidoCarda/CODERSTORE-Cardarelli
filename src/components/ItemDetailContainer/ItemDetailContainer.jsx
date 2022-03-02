@@ -10,12 +10,11 @@ import { db } from '../../firebase'
 const ItemDetailContainer = () => {
 
   const { id } = useParams();
-  
+
   const [item,setItem] = useState({})
   const [loading,setLoading] = useState(true)
 
   useEffect(()=>{
-    
     const getItem = async ()=>{
       const itemRef = doc(db, "items", `${id}`)
       const itemSnapshot = await getDoc(itemRef)
