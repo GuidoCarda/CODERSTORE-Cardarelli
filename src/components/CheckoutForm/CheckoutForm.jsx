@@ -4,7 +4,6 @@ import { CartContext } from '../../context/CartContext'
 import { db } from '../../firebase';
 import { formatDate, formatPrice, validateEmail } from '../../helpers';
 import './CheckoutForm.css'
-import { useEffect } from 'react/cjs/react.development';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 
