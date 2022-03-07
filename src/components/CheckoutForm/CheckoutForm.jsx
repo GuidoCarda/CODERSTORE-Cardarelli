@@ -109,8 +109,6 @@ const CheckoutForm = () => {
         console.error(err)
       })
     }
-
-    
   }
 
   return (
@@ -185,9 +183,3 @@ const CheckoutForm = () => {
 }
 
 export default CheckoutForm
-
-
-/*
-
-
-*/ 
