@@ -22,7 +22,8 @@ Cada card al clickearse nos lleva a el detalle del item en cuestion, este detall
 
 ### Representación de la navegabilidad del sitio
 
-![Hnet-image](https://user-images.githubusercontent.com/78933518/150866677-7da3a6af-0f67-4479-af43-51f0d769adcd.gif)
+![Hnet-image](https://user-images![2022-03-06 21-34-41_Trim](https://user-images.githubusercontent.com/78933518/156951677-98d95f4e-9e04-4490-8d44-c3cbe14f8eac.gif)
+.githubusercontent.com/78933518/150866677-7da3a6af-0f67-4479-af43-51f0d769adcd.gif)
 
 ### Librerias del proyecto
 
