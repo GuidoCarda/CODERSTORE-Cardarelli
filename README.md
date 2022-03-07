@@ -45,5 +45,5 @@ Para este proyecto trate de utilizar la menor cantidad de librerias posible para
 
 Esto me permitio por ejemplo aprender a implementar formularios, validacion, modales, animaciones y mucho más con react js.
 
-[React Icons](https://react-icons.github.io/react-icons)
-[React-Router-Dom V6](https://reactrouter.com/docs/en/v6)
+- [React Icons](https://react-icons.github.io/react-icons)
+- [React-Router-Dom V6](https://reactrouter.com/docs/en/v6)
