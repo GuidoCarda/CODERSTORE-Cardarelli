@@ -18,7 +18,7 @@ const ItemList = ({items}) => {
   useEffect(()=>{
     if(filterValue?.id === 0){
       items.sort((itemA, itemB) => itemA.price  - itemB.price)
-    }else if(filterValue?.id === 1){
+    }else{
       items.sort((itemA, itemB) => itemB.price - itemA.price)
     }
   }, [filterValue, items])
