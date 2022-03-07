@@ -5,7 +5,7 @@
 En este proyecto estare creando una ecommerce para la venta de insumos informaticos y productos para el mundo del gaming bajo el nombre de marca MISTEC 
 
 
-Pueden acceder al sitio mediante el siguiente link [Mistec](https://mistec.netlify.app/)
+Pueden acceder al sitio mediante el siguiente link [https://mistec.netlify.app/](https://mistec.netlify.app/)
 
 El sitio cuenta con 3 categorias.
 
