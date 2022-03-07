@@ -1,10 +1,10 @@
 import React,{ useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
-import { MdDeleteForever, MdOutlineClose, MdCancelPresentation } from 'react-icons/md'
-import './Cart.css'
-import { formatPrice } from '../../helpers'
 import ItemCount from '../ItemCount/ItemCount'
+import { formatPrice } from '../../helpers'
+import { Link } from 'react-router-dom'
+import './Cart.css'
+import { MdDeleteForever, MdOutlineClose, MdCancelPresentation } from 'react-icons/md'
 
 const Cart = () => {
   
@@ -13,11 +13,9 @@ const Cart = () => {
   let cartTotal = 0;
   cart.map(item => cartTotal = cartTotal + (item.price * item.qty))
 
-
   return (
     <section>
       <div className='container cart'>    
-
         <header className='cart-header'>
           <h2 >Carrito de productos</h2>
           {cartTotal ? <button className='btn icon-btn' onClick={clear}><MdDeleteForever/>Limpiar carrito</button> : null}

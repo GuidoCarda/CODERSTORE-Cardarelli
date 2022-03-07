@@ -1,13 +1,17 @@
-import { addDoc, collection, doc, Timestamp, writeBatch } from 'firebase/firestore';
 import React, { useContext, useState } from 'react'
+
 import { CartContext } from '../../context/CartContext'
+import { addDoc, collection, doc, Timestamp, writeBatch } from 'firebase/firestore';
 import { db } from '../../firebase';
-import { formatDate, formatPrice, validateEmail } from '../../helpers';
-import './CheckoutForm.css'
 import { Link } from 'react-router-dom';
+
+import { formatDate, formatPrice, validateEmail } from '../../helpers';
+
+import './CheckoutForm.css'
+import { AiFillCheckCircle } from 'react-icons/ai';
+
 import Loading from '../Loading/Loading';
 import Modal from '../Modal/Modal';
-import { AiFillCheckCircle } from 'react-icons/ai';
 
 const CheckoutForm = () => {
 

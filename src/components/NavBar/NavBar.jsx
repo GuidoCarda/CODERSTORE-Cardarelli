@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './NavBar.css'
-import { FaBars   } from 'react-icons/fa'
-import CartWidget from '../CartWidget/CartWidget';
-import {AiOutlineUser } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
+import {AiOutlineUser } from 'react-icons/ai'
+import { FaBars } from 'react-icons/fa'
+import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);

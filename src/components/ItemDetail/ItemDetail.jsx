@@ -22,8 +22,6 @@ const ItemDetail = ({item}) => {
     setIsAdded(!isAdded)
   }
 
-  //const cartItem = isInCart(item.id);
-
   const cartItem = isInCart(item.id);
   const limitBuy = useCallback(()=>{
     
@@ -39,16 +37,6 @@ const ItemDetail = ({item}) => {
   useEffect(()=>{
    limitBuy() 
   },[limitBuy])
-
-  /*
-  useEffect(()=>{
-    const cartItem = isInCart(item.id);
-
-    if(cartItem !== undefined ){
-      item.stock = item.stock - cartItem.qty
-    }
-  },[isInCart, item])
-*/
 
   return (
     <>
@@ -106,42 +94,3 @@ const ItemDetail = ({item}) => {
 }
 
 export default ItemDetail
-
-
-/* 
- <>
-      <div className="item-detail-img">
-        <img
-        src={item?.pictureURL}
-        alt=""
-        />
-      </div>
-
-      <div className="item-detail-info">
-        <span className={`item-detail-category ${item.category}`}>{item.category}</span>
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
-        <div>
-          <span  className='item-detail-stock'>Stock disponible: {item.stock - itemQty}</span>
-          <span className='item-detail-price'>{formatPrice(item.price)}</span>
-        </div>
-          { itemQty === 0 
-              ? <ItemCount stock={item.stock} initial={ item.stock ? 1 : 0} onAdd={onAdd}/> 
-              : <>
-                <Link 
-                  to={'/cart'}
-                  className="to-cart-btn"
-                  >  
-                  Ir al carrito
-                </Link>
-                <Link 
-                  to={'/'}
-                  className="to-home-btn"
-                  >  
-                  Seguir comprando
-                </Link>
-              </>
-          } 
-      </div>
-    </>
-*/ 

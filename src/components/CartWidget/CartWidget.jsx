@@ -4,7 +4,6 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { CartContext } from '../../context/CartContext'
 
 const CartWidget = () => {
-  
   const { cartTotal } = useContext(CartContext)
 
   return (
