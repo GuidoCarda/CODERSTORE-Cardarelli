@@ -18,11 +18,16 @@ const ItemList = ({items}) => {
   useEffect(()=>{
     if(filterValue?.id === 0){
       items.sort((itemA, itemB) => itemA.price  - itemB.price)
-    }else{
+    }else if(filterValue?.id === 1){
       items.sort((itemA, itemB) => itemB.price - itemA.price)
     }
   }, [filterValue, items])
  
+  const setValue = (val) =>{
+    if(val.id !== filterValue?.id){
+      setFilterValue(val)
+    }
+  }
  
   return (
     <>
@@ -31,7 +36,7 @@ const ItemList = ({items}) => {
         options={options} 
         label='Filtrar por:'
         value={filterValue}
-        onChange={val => setFilterValue(val)} 
+        onChange={val => setValue(val)} 
       />
       <div className='item-list'>
         {items.map(item=> <Link key={item.id} to={`/item/${item.id}`}><Item  product={item}/></Link>)}

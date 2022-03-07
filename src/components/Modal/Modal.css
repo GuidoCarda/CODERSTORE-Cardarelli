@@ -1,0 +1,95 @@
+.modal-backdrop{
+  position: fixed;
+  background: rgba(32, 32, 32, 0.431);
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  animation: 250ms animation1 ease-in;
+}
+
+.modal-container{
+  background: white;
+  position: relative;
+  padding: 1rem;
+  border-radius: .3rem;
+  width: min(600px, 90vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal-container p{
+  color: grey;
+  font-size: var(--normal-font-size);
+}
+.modal-container .modal-subheader{
+  margin-bottom: 1rem; 
+}
+.modal-container .modal-order-id{
+  background: rgb(238, 238, 238);
+  padding: .2rem .5rem;
+  border-radius: .3rem;
+  color: black;
+}
+
+.modal-container .modal-title{
+  font-size: var(--h2-font-size);
+}
+
+.modal-container .modal-actions{
+  position: absolute;
+  justify-content: flex-end;
+  display: flex; 
+  bottom: 0;
+  right: 0;
+  left: 0;
+  gap: 1rem;
+  border-top: 1px solid rgb(226, 226, 226);
+  padding: 1rem;
+}
+
+@media screen and (max-width: 480px){
+  .modal-container .modal-actions{
+    gap: .2rem;
+  }
+}
+
+.modal-content{
+  margin-block: 3rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-closebtn{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  border-radius: .3rem;
+  border: none;
+  background: none;
+}
+
+.modal-closebtn:hover{
+  background: rgb(240, 240, 240);
+}
+
+.success-icon{
+  font-size: 6rem;
+  color: var(--clr-primary);
+  height: 6rem;
+  width: 6rem;
+  background: rgb(222, 248, 222);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  margin-bottom: 1rem;
+}

@@ -18,9 +18,9 @@ const NavBar = () => {
           <span className='nav-logo'><NavLink to="/">MISTEC</NavLink></span>
         </div>
         <ul className={`nav-links ${isOpen&&'active'}`}>
-          <li><NavLink onClick={handleToggle} to='/category/componentes'>componentes</NavLink></li>
-          <li><NavLink onClick={handleToggle} to='/category/perifericos' >perifericos</NavLink></li>
-          <li><NavLink onClick={handleToggle} to='/category/notebooks' >notebooks</NavLink></li>
+          <li><NavLink onClick={handleToggle} to='/category/componentes'>Componentes</NavLink></li>
+          <li><NavLink onClick={handleToggle} to='/category/perifericos' >Perifericos</NavLink></li>
+          <li><NavLink onClick={handleToggle} to='/category/notebooks' >Notebooks</NavLink></li>
         </ul>
   
         <div className="nav-buttons">

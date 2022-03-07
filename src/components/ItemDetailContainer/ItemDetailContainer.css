@@ -6,6 +6,11 @@
   padding-block: 2rem;
 }
 
+.container.item-detail > .loading{
+  position: fixed;
+  inset: 0;
+}
+
 @media screen and (max-width: 1024px) {
   .item-detail{
     grid-template-columns: 1fr; 

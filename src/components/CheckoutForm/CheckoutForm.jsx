@@ -4,12 +4,12 @@ import { CartContext } from '../../context/CartContext'
 import { db } from '../../firebase';
 import { formatDate, formatPrice, validateEmail } from '../../helpers';
 import './CheckoutForm.css'
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
+import Modal from '../Modal/Modal';
+import { AiFillCheckCircle } from 'react-icons/ai';
 
 const CheckoutForm = () => {
-
-  let navigate = useNavigate();
 
   const { cart , clear, addOrder } = useContext(CartContext);
 
@@ -39,8 +39,8 @@ const CheckoutForm = () => {
     }
     if(!values.phone){
       errors.phone = 'Campo numero vacio'
-    }else if(values.phone.length !== 9){
-      errors.phone = 'Ingrese un numero valido'   
+    }else if(values.phone.length < 8 || values.phone.length > 10 ){
+      errors.phone = 'Ingrese un numero entre 8 y 10 caracteres'   
     }
     if(!values.email){
       errors.email = 'Campo email vacio'
@@ -97,10 +97,9 @@ const CheckoutForm = () => {
         console.log('Compra exitosa, el id de la orden es', doc.id)
         const orderId = doc.id;
         updateStocks()
-        clear()
         addOrder(order, orderId)
+        clear()
         setLoading(false)
-        navigate('/userProfile')
       })
       .catch(err=>{
         console.error(err)
@@ -111,59 +110,80 @@ const CheckoutForm = () => {
   }
 
   return (
-  <>
-    {loading ? <Loading/> :
-    <div className='container checkout'>
-      <form className='checkout-form' onSubmit={checkout} >
-        <div className='checkout-header'>
-        <h2>Ya casi terminamos!</h2>
-        <p>Completa con tus datos para finalizar la compra</p>
+    <>
+      {loading ? <Loading/> : 
+      <div className='container checkout'>
+        <form className='checkout-form' onSubmit={checkout} >
+          <div className='checkout-header'>
+          <h2>Ya casi terminamos!</h2>
+          <p>Completa con tus datos para finalizar la compra</p>
+          </div>
+          <div className="form-field">
+            <label>Nombre completo</label>
+            <input 
+              type="text" 
+              name="fullname"
+              value={buyer.fullname || ''}
+              onChange={handleChange}
+            />
+            { formErrors.fullname && <span className='form-error'>{formErrors.fullname}</span> }
+          </div>
+          <div className="form-field">
+            <label>Telefono/Celular</label>
+            <input 
+              type="number" 
+              name="phone"
+              value={buyer.phone || ''}
+              onChange={handleChange}
+              placeholder={'xxx xxxxxx'}
+              min='0'
+            />
+            { formErrors.phone && <span className='form-error'>{formErrors.phone}</span> }
+          </div>
+          <div className="form-field">
+            <label>Email</label>
+            <input 
+              type="text" 
+              name="email"
+              value={buyer.email || ''}
+              onChange={handleChange}
+            />
+            { formErrors.email && <span className='form-error'>{formErrors.email}</span> }
+          </div>
+        
+          <div className='checkout-total'>
+            <p>Total</p>
+            <span>{formatPrice(checkoutTotal)}</span>
+          </div>
+  
+          <button type='submit' className='btn btn-span btn-primary'>Finalizar compra</button>
+        </form>
+      </div>
+    }
+  
+      {isSubmitted &&<Modal 
+        header={false}
+      >
+        <div className="modal-content">
+          <span className="success-icon"><AiFillCheckCircle/></span>
+          <h2 className='modal-title'>Compra exitosa</h2>
+          <p className='modal-subheader'>Tu compra fue realizada con exito</p>
+          <p>El id de tu compra es: <span className='modal-order-id'>d134141414124</span></p>
         </div>
-        <div className="form-field">
-          <label>Nombre completo</label>
-          <input 
-            type="text" 
-            name="fullname"
-            value={buyer.fullname || ''}
-            onChange={handleChange}
-            autoFocus
-          />
-          { formErrors.fullname && <span className='form-error'>{formErrors.fullname}</span> }
+        <div className="modal-actions">
+          <Link to='/' className='btn'>seguir comprando</Link>
+          <Link to='/userProfile'  className='btn btn-primary'>mis ordenes</Link>
         </div>
-        <div className="form-field">
-          <label>Telefono/Celular</label>
-          <input 
-            type="number" 
-            name="phone"
-            value={buyer.phone || ''}
-            onChange={handleChange}
-            placeholder={'xxx xxxxxx'}
-            min='0'
-          />
-          { formErrors.phone && <span className='form-error'>{formErrors.phone}</span> }
-        </div>
-        <div className="form-field">
-          <label>Email</label>
-          <input 
-            type="text" 
-            name="email"
-            value={buyer.email || ''}
-            onChange={handleChange}
-          />
-          { formErrors.email && <span className='form-error'>{formErrors.email}</span> }
-        </div>
-      
-        <div className='checkout-total'>
-          <p>Total</p>
-          <span>{formatPrice(checkoutTotal)}</span>
-        </div>
+      </Modal>}
+    </>
+    )
 
-        <button type='submit' className='btn btn-span btn-primary'>Finalizar compra</button>
-      </form>
-    </div>
-  }
-  </>
-  )
 }
 
 export default CheckoutForm
+
+
+/*
+
+
+*/ 

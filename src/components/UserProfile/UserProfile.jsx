@@ -28,10 +28,12 @@ const UserProfile = () => {
             <div className="orders-table-container">
               <table className='orders-table'>
                 <thead>
-                  <th>fecha</th>
-                  <th>codigo</th>
-                  <th>productos</th>
-                  <th>total</th>
+                  <tr className='orders-table-header'>
+                    <th>fecha</th>
+                    <th>codigo</th>
+                    <th>productos</th>
+                    <th>total</th>
+                  </tr>
                 </thead>
                 <tbody>
                   {

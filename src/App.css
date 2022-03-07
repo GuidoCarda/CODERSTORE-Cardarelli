@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 :root{
-  --clr-primary: rgb(79, 81, 228);
   --clr-primary: rgb(78, 180, 91);
   --bg-clr: rgb(250, 250, 250);
 
@@ -46,7 +45,6 @@ body{
   background: var(--bg-clr)
 }
 
-
 ul{
   list-style: none;
 }
@@ -90,6 +88,10 @@ img{
   color: white;
 }
 
+.btn.btn-primary:hover{
+  background: rgb(72, 165, 84);
+}
+
 .btn.btn-primary:active{
   border-color: rgb(126, 209, 126);
   color: white;
@@ -121,11 +123,9 @@ img{
 @keyframes animation1 {
   0%{
     opacity: 0;
-    /*transform: translateY(.5rem);/*
   }
   100%{
     opacity: 1;
-    /*transform: translateY(0);*/
   }
 }
 

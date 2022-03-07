@@ -13,6 +13,7 @@ const Cart = () => {
   let cartTotal = 0;
   cart.map(item => cartTotal = cartTotal + (item.price * item.qty))
 
+
   return (
     <section>
       <div className='container cart'>    

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import Loading from '../Loading/Loading'
 import './ItemDetailContainer.css'
-
 import { useParams } from 'react-router-dom'
 import {doc,getDoc} from 'firebase/firestore'
 import { db } from '../../firebase'

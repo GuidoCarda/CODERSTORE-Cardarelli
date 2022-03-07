@@ -32,7 +32,7 @@ const Dropdown = ({ options, label, value, onChange }) => {
               setOpen(false)
             }} 
             key={option.id} 
-            className="option"
+            className={`option ${value?.id === option.id ? "selected" : null}`}
           >
             {option.name}
           </div>

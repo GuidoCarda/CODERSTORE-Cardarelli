@@ -36,6 +36,10 @@
   white-space: nowrap;
 }
 
+.orders-table .orders-table-header{
+  background: rgb(235, 235, 235);
+}
+
 .orders-table tr{
   border: 1px solid rgb(243, 243, 243);
   background: white;
